@@ -1,41 +1,43 @@
-$(document).ready(function() {
+$(document).ready(function() { 
+	$("#owl-example").owlCarousel({ 
+	 
+	    items : 6,
+	    itemsDesktop : [1199,3],
+	    itemsDesktopSmall : [979,3],
+	    pagination: false
+ 
+	});
 
-$(window).on('resize', function(){
+	var owl = $(".owl-carousel").data('owlCarousel');
 
-	leftArrow1()
-	leftArrow2()
+	$('.partner-left').on('click', function(){ 
+		owl.prev()
+	})
 
-})
+	$('.partner-right').on('click', function(){ 
+		owl.next()
+	})
 
-leftArrow1()
-leftArrow2()
+	$(window).on('resize', function(){
+
+		leftArrow1() 
+
+	})
+
+	leftArrow1() 
 
 })
 
 function leftArrow1() {
 
-	var leftspace = $('.readmore').offset().left + 30
+	var leftspace = $('.readmore-slider').offset().left + 30
 
 	$('.long-arrow').css('width', leftspace)
 
-	$('.readmore').mouseover(function(){
-		$('.long-arrow').addClass('long-arrow-hover')
+	$('.readmore-slider').mouseover(function(){
+		$(this).find('.long-arrow').addClass('long-arrow-hover')
 	}).mouseout(function(){
-		$('.long-arrow').removeClass('long-arrow-hover')
+		$(this).find('.long-arrow').removeClass('long-arrow-hover')
 	})
 
-}
-
-function leftArrow2() {
-
-	var leftspace = $('.readmore-tagline').offset().left + 30
-
-	$('.long-arrow').css('width', leftspace)
-
-	$('.readmore-tagline').mouseover(function(){
-		$('.long-arrow').addClass('long-arrow-hover')
-	}).mouseout(function(){
-		$('.long-arrow').removeClass('long-arrow-hover')
-	})
-
-}
+} 
