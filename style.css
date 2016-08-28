@@ -436,12 +436,8 @@ header:after {
     right: 0;
     bottom: 0;
     z-index: 9999;
-}
-
-.intro div{
-	background: url('images/pattern.svg')  #10112f;
-	background-size: 50%;
-	width: 10%;
-	height: 100%;
-	float: left;
-}
+    background: url('images/pattern.svg') #10112f;
+    background-size: 14px 20px;
+    clip: rect(0, 100px, auto, 0);
+    clip: rect(0, 200px, auto, 300px);
+} 
